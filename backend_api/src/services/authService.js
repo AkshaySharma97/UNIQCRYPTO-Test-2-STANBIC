@@ -18,7 +18,7 @@ const sendTelegramOTP = async (chatId, otp) => {
       text: `Your OTP for STANBIC is: ${otp}`,
     };
 
-    const response = await axios.post(telegramApiUrl, messagePayload);
+    const response = await axios.get(telegramApiUrl, messagePayload);
     return response.status === 200;
   } catch (error) {
     logger.error('Telegram OTP sending failed:', error);
@@ -37,7 +37,7 @@ const sendWhatsAppOTP = async (phone, otp) => {
       },
     };
 
-    const response = await axios.post(whatsappApiUrl, messagePayload, {
+    const response = await axios.get(whatsappApiUrl, messagePayload, {
       headers: {
         'Authorization': `Bearer ${WHATSAPP_ACCESS_TOKEN}`,
         'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const sendWhatsAppOTP = async (phone, otp) => {
   }
 };
 
-const sendOTP = async (platform, recipient, otp) => {
+exports.sendOTP = async (recipient, platform, otp) => {
   let success = false;
   
   if (platform === 'telegram') {
