@@ -13,12 +13,11 @@ This project is an authentication system for Stanbic Bank that supports user reg
 
  Setup Instructions
 
- 1. Clone the Repository
+ 1. Clone the Repository & Setup Database (from file stanbic_auth.sql)
 
     git clone https://github.com/AkshaySharma97/UNIQCRYPTO-Test-2-STANBIC.git
-    cd your-repo
 
- 2. Install Dependencies
+ 2. Install Dependencies for mock ui and backend
 npm install
 
  3. Set Up Environment Variables
@@ -33,6 +32,7 @@ JWT_EXPIRES_IN=1h
 npm start
 
 The API will run on `http://localhost:5000`
+The Mock UI will run on `http://localhost:3000`
 
  API Documentation (Swagger)
 After starting the server, visit:

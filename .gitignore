@@ -1,8 +1,9 @@
 # Ignore environment files
-.env
+/backend_api/.env
 
 # Ignore Node.js dependencies
-/node_modules
+/backend_api/node_modules
+/mock-ui/node_modules
 
 # Ignore IDE/editor-specific files
 .vscode
@@ -10,4 +11,5 @@
 .DS_Store
 
 # Ignore lock files
-package-lock.json
+/backend_api/package-lock.json
+/mock-ui/package-lock.json
